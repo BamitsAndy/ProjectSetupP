@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "project-setup"
+version = "0.1.0"
+description = "A project setup tool"
+requires-python = ">=3.10"
+dependencies = [
+    "typer",
+    "click",
+]
+
+[project.scripts]
+proj-setup = "project_setup.proj_setup:app"
+git-setup = "project_setup.git_setup:main"
+venv-setup = "project_setup.venv_setup:main"
+cli-config = "project_setup.cli_config:main"
+project-init = "project_setup.project_init:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/project_setup"]
